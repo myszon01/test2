@@ -10,5 +10,10 @@ jobs:
     runs-on: macos-10.15
     timeout-minutes: 30
     steps:
-    - name: Checkout AutoPkg recipes
-      run: echo "its working"
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+        path: ./test2
+    - name: run
+      run: cat ./test/sometext.txt 
