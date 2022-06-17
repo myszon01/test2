@@ -16,4 +16,4 @@ jobs:
         fetch-depth: 1
         path: ./test2
     - name: run
-      run: ls test 
+      run: ls 
