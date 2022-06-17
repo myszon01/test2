@@ -13,7 +13,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
-        fetch-depth: 1
-        path: ./test2
+        ref: ${{github.event.pull_request.head.ref}}
+        repository: ${{github.event.pull_request.head.repo.full_name}}
     - name: run
       run: cat test2/test/sometext.txt
