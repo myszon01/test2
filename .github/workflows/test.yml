@@ -17,3 +17,5 @@ jobs:
         repository: ${{github.event.pull_request.head.repo.full_name}}
     - name: run
       run: ls
+    - name: run2
+      run: cat test/sometext.txt
