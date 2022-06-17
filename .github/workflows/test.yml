@@ -20,3 +20,18 @@ jobs:
       run: echo ${{github.event_name}}
     - name: run2
       run: cat test/sometext.txt
+    
+  testRun2:
+    if: github.event_name != 'pull_request_target'
+    runs-on: macos-10.15
+    timeout-minutes: 30
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: ${{github.event.pull_request.head.ref}}
+        repository: ${{github.event.pull_request.head.repo.full_name}}
+    - name: run
+      run: echo ${{github.event_name}}
+    - name: run2
+      run: cat test/sometext.txt
